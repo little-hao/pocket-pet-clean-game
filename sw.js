@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "pocket-pet-shell-";
-const CACHE_NAME = `${CACHE_PREFIX}0.1.0`;
+const CACHE_NAME = `${CACHE_PREFIX}0.2.0`;
 const SCOPE_URL = new URL(self.registration.scope);
 const SHELL_URL = SCOPE_URL.href;
 
