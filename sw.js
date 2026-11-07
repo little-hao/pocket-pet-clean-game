@@ -67,6 +67,9 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== SCOPE_URL.origin || !url.pathname.startsWith(SCOPE_URL.pathname)) {
     return;
   }
+  // Account and cloud-save responses are private, mutable data. They must
+  // always reach the network and must never enter the shared app-shell cache.
+  if (url.pathname.startsWith("/api/")) return;
 
   if (request.mode === "navigate") {
     event.respondWith(
